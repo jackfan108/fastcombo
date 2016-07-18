@@ -1,5 +1,5 @@
+# Controls user login authentication
 class LoginController < ApplicationController
-
   # GET /products
   # GET /products.json
   def index
@@ -32,6 +32,4 @@ class LoginController < ApplicationController
   # DELETE /products/1.json
   def destroy
   end
-
-  private
 end

@@ -35,7 +35,7 @@ gem 'turbolinks'
 group :development do
   # Code quality
   gem 'rubocop', '~> 0.37.2', require: false
-    # Adds the ruby debugger pry
+  # Adds the ruby debugger pry
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails', '~> 0.3.4'
@@ -43,7 +43,6 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end
-
 
 group :development, :test do
   # Our testing library for ruby
@@ -58,7 +57,6 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0.4', require: false
   gem 'spring-commands-cucumber', github: 'teespring/spring-commands-cucumber', require: false
 end
-
 
 # The ruby version we're using
 ruby '2.2.4'

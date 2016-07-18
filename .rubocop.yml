@@ -1,0 +1,143 @@
+# This is the configuration used to check the rubocop source code.
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'node_modules/**/*'
+    - 'db/**/*'
+    - 'features/step_definitions/debug_steps.rb'
+    - 'lib/tasks/find_relaunches_out_of_stock_colors.rake' # FIXME: Refactor this rake task
+    - 'apps/**/spec/dummy/**/*'
+    - 'bin/**/*'
+
+Metrics/BlockNesting:
+  Max: 2
+
+Metrics/LineLength:
+  Include:
+    - 'app/decorators/**/*'
+    - 'app/forms/**/*'
+    - 'app/lib/**/*'
+    - 'app/middleware/**/*'
+    - 'app/models/**/*'
+    - 'app/query_objects/**/*'
+    - 'app/services/**/*'
+    - 'app/workers/**/*'
+  Max: 120
+  AllowURI: true
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+Lint/UselessAccessModifier:
+  Exclude:
+    - 'apps/api/lib/serialization/json_serializer.rb'
+
+Metrics/ParameterLists:
+  Exclude:
+    - 'app/lib/image_api.rb'
+
+Lint/Eval:
+  Exclude:
+    - 'features/models/shipping_service_selection/step_definitions/non_us_steps.rb'
+    - 'features/models/shipping_service_selection/step_definitions/united_states_steps.rb'
+
+Lint/RescueException:
+  Exclude:
+  - 'lib/sidekiq/middleware/parameters_logging.rb'
+
+Lint/UnusedMethodArgument:
+  Exclude:
+   - 'app/models/campaign_content_review_status.rb'
+
+Style/AndOr:
+  EnforcedStyle: 'conditionals'
+
+Style/AlignHash:
+  EnforcedColonStyle: 'key'
+  EnforcedHashRocketStyle: 'key'
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'detect'
+    find_all: 'select'
+
+Style/DotPosition:
+  EnforcedStyle: 'trailing'
+
+Style/IndentationConsistency:
+  Exclude:
+   - 'script/judgment' # the inline comments are breaking this rule
+
+Style/RescueModifier:
+  Exclude:
+   - 'script/judgment' # we're working with files that might not be there
+
+Style/WordArray:
+  MinSize: 3
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/HashSyntax:
+  EnforcedStyle: 'ruby19'
+
+Performance/Casecmp:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+Style/UnneededInterpolation:
+  Enabled: false
+
+Lint/UnneededDisable:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/AlignHash:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
